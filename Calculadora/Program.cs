@@ -67,10 +67,9 @@ namespace Calculadora
                         break;
                     }
 
-                    Console.WriteLine("Pressione qualquer tecla para sair");
-                    Console.ReadKey();
-            }
 
+
+            }
         }
     }
 }
