@@ -1,3 +1,5 @@
+using System.Net;
+
 namespace Calculadora
 {
     internal class Program
@@ -13,11 +15,20 @@ namespace Calculadora
 
             Console.WriteLine("Calculadora");
 
-            Console.WriteLine("/");
-            Console.WriteLine("*");
 
-            Console.Write("Escolha uma opção: ");
-            operacao = (Console.ReadLine());
+            do
+            {
+                Console.WriteLine("Escolha uma operação (+, -, /,* ): ");
+                operacao = Console.ReadLine();
+
+                if (operacao != "+" && operacao != "-" && operacao != "/" && operacao != "*")
+                {
+                    Console.WriteLine("Escolha operacao válida");
+                }
+
+
+            }
+            while (operacao != "+" && operacao != "-" && operacao != "/" && operacao != "*");
 
             Console.WriteLine("Digite o primeiro número");
             num1 = Convert.ToDouble(Console.ReadLine());
@@ -25,58 +36,50 @@ namespace Calculadora
             Console.WriteLine("Digite o segundo numero");
             num2 = Convert.ToDouble(Console.ReadLine());
 
+
             switch (operacao)
             {
                 case "/":
                     {
                         resultado = num1 / num2;
-                        Console.WriteLine($"Resultado {resultado}");
+                        Console.WriteLine($"Resultado: {resultado} ");
                         break;
                     }
 
                 case "*":
                     {
                         resultado = (num1 * num2);
-                        Console.WriteLine($"Resultado{resultado}");
+                        Console.WriteLine($"Resultado: {resultado} ");
                         break;
                     }
 
-             }
-
-
-     
-            // usuario ira escolher a operacao matematica que deseja realizar
-            Console.WriteLine("Calculadora");
-
-            Console.WriteLine("Escolha uma operação (+, -): ");
-            operacao = Console.ReadLine();
-
-            // solicitar os numeros que usuario deseja 
-            Console.WriteLine("Digite o primeiro número: ");
-            num1 = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Digite o segundo núemro: ");
-            num2 = Convert.ToDouble(Console.ReadLine());
-
-            // realização da operação
-            switch (operacao) 
-            {
                 case "+":
-                resultado = num1 + num2;
-                Console.WriteLine("Resultado: " + resultado);
-                break;
+                    {
+                        resultado = num1 + num2;
+                        Console.WriteLine("Resultado: " + resultado);
+                        break;
+                    }
 
-            case "-":
-                resultado = num1 - num2;
-                Console.WriteLine("Resultado: " + resultado);
-                break;
-                   
+                case "-":
+                    {
+                        resultado = num1 - num2;
+                        Console.WriteLine("Resultado: " + resultado);
+                        break;
+                    }
+
+                    Console.WriteLine("Pressione qualquer tecla para sair");
+                    Console.ReadKey();
             }
 
-            // pausar operação para devolver resultado
-            Console.WriteLine("Pressione qualquer tecla para sair");
-            Console.ReadKey();
         }
     }
-
 }
+
+
+
+
+        
+
+    
+            
+
