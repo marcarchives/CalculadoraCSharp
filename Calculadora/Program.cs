@@ -33,7 +33,7 @@
                 resultado = num1 - num2;
                 Console.WriteLine("Resultado: " + resultado);
                 break;
-
+                    ss
             }
 
             // pausar operação para devolver resultado
