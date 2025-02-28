@@ -5,33 +5,45 @@
         static void Main(string[] args)
         {
 
-            int valor1 = 10, valor2 = 10;
-
-            int div = valor1 / valor2;
-            int mult = valor1 * valor2;
-
-            Console.WriteLine("Escolha uma operação");
-
-            Console.WriteLine("3 - Divisão");
-            Console.WriteLine("4 - Multiplicação");
+            double num1, num2, resultado;
+            string operacao;
 
 
-            int operacao = int.Parse(Console.ReadLine());
 
-            if (operacao == 3)
+            Console.WriteLine("Calculadora");
+
+            Console.WriteLine("/");
+            Console.WriteLine("*");
+
+            Console.Write("Escolha uma opção: ");
+            operacao = (Console.ReadLine());
+
+            Console.WriteLine("Digite o primeiro número");
+            num1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Digite o segundo numero");
+            num2 = Convert.ToDouble(Console.ReadLine());
+
+            switch (operacao)
             {
-                Console.WriteLine($"Você escolhei a opção: {operacao} - Divisão: 10 / 10  = {div}");
-            }
+                case "/":
+                    {
+                        resultado = num1 / num2;
+                        Console.WriteLine($"Resultado {resultado}");
+                        break;
+                    }
 
-            else if (operacao == 4)
-            {
-                Console.WriteLine($"Você escolheu a opção: {operacao} - Multiplicação: 10 * 10 = {mult}");
+                case "*":
+                    {
+                        resultado = (num1 * num2);
+                        Console.WriteLine($"Resultado{resultado}");
+                        break;
+                    }
 
-            }
-            else
-            {
-                Console.WriteLine("Você escolheu uma opção inválida");
-            }
+             }
+
+
         }
     }
+}
 }
